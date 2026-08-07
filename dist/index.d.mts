@@ -221,6 +221,7 @@ type Order = {
     shipping_method_id?: number;
     shipping_cost: number;
     shipping_method_snapshot?: ShippingMethodSnapshot;
+    status: "PENDING_PAYMENT" | "PAID" | "PROCESSING" | "COMPLETED" | "CANCELLED";
     total_weight_kg?: number;
     address_snapshot: Address;
     coupon_snapshot?: Pick<Coupon, "id" | "code" | "type" | "discount" | "min_order_value">;
@@ -250,7 +251,7 @@ type Shipment = {
     id: number;
     created_at: string;
     updated_at: string;
-    status: "PROCESSING" | "SHIPPED" | "DELIVERED";
+    status: "PROCESSING" | "SHIPPED" | "DELIVERED" | "PENDING";
     data?: ShipmentData;
     order_uuid: string;
     is_active: boolean;

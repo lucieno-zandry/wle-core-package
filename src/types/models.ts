@@ -258,6 +258,7 @@ export type Order = {
     shipping_method_id?: number;     // FK to ShippingMethod
     shipping_cost: number;           // calculated cost at order time
     shipping_method_snapshot?: ShippingMethodSnapshot;
+    status: "PENDING_PAYMENT" | "PAID" | "PROCESSING" | "COMPLETED" | "CANCELLED";
 
     // optional: total weight of order (sum of variant weights * quantity)
     total_weight_kg?: number;
@@ -293,7 +294,7 @@ export type Shipment = {
     id: number;
     created_at: string;
     updated_at: string;
-    status: "PROCESSING" | "SHIPPED" | "DELIVERED";
+    status: "PROCESSING" | "SHIPPED" | "DELIVERED" | "PENDING";
     data?: ShipmentData;
     order_uuid: string;
     is_active: boolean;
