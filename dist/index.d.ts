@@ -1,3 +1,5 @@
+import z from 'zod';
+
 type User = {
     id: number;
     name: string;
@@ -573,4 +575,9 @@ declare function getLandingAbleType(able: LandingAble): string;
 declare function getLandingAbleThumbnail(able: LandingAble): string | null;
 declare function getLandingAbleMeta(able: LandingAble): string;
 
-export { type Address, type AppImage, type AppNotification, type AppliedPromotion, type CartItem, type Category, type CategoryBlock, type ClientCode, type ClientCodeNotificationData, type CollectionContent, type CollectionContentItem, type ComparisonContent, type ComparisonRow, type Coupon, type CtaBannerContent, type DisputeNotificationData, type DisputeStatus, type FaqContent, type FaqItem, type FeaturedProductsContent, type HeroContent, type LandingAble, type LandingBlock, type NotificationData, type Order, type OtherNotificationData, type PaymentWebhookLog, type Product, type ProductSnapshot, type Promotion, type RefundNotificationData, type RefundRequest, type Setting, type Shipment, type ShipmentData, type ShipmentNotificationData, type ShippingMethod, type ShippingMethodSnapshot, type ShippingRate, type StoryContent, type StoryStat, type Testimonial, type TestimonialsContent, type Transaction, type TransactionAuditLog, type TransactionNotificationData, type TransactionType, type User, type UserNotificationData, type UserPreference, type UserStatus, type Variant, type VariantGroup, type VariantOption, type VariantOptionsSnapshot, type VariantSnapshot, type WebhookLogStatus, getLandingAbleLabel, getLandingAbleMeta, getLandingAbleThumbnail, getLandingAbleType, isAppImage, isCategory, isProduct, isVariant };
+type GetValidationErrorProps = {
+    value: unknown;
+    dataFormat: z.ZodTypeAny;
+};
+
+export { type Address, type AppImage, type AppNotification, type AppliedPromotion, type CartItem, type Category, type CategoryBlock, type ClientCode, type ClientCodeNotificationData, type CollectionContent, type CollectionContentItem, type ComparisonContent, type ComparisonRow, type Coupon, type CtaBannerContent, type DisputeNotificationData, type DisputeStatus, type FaqContent, type FaqItem, type FeaturedProductsContent, type GetValidationErrorProps, type HeroContent, type LandingAble, type LandingBlock, type NotificationData, type Order, type OtherNotificationData, type PaymentWebhookLog, type Product, type ProductSnapshot, type Promotion, type RefundNotificationData, type RefundRequest, type Setting, type Shipment, type ShipmentData, type ShipmentNotificationData, type ShippingMethod, type ShippingMethodSnapshot, type ShippingRate, type StoryContent, type StoryStat, type Testimonial, type TestimonialsContent, type Transaction, type TransactionAuditLog, type TransactionNotificationData, type TransactionType, type User, type UserNotificationData, type UserPreference, type UserStatus, type Variant, type VariantGroup, type VariantOption, type VariantOptionsSnapshot, type VariantSnapshot, type WebhookLogStatus, getLandingAbleLabel, getLandingAbleMeta, getLandingAbleThumbnail, getLandingAbleType, isAppImage, isCategory, isProduct, isVariant };
