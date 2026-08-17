@@ -56,13 +56,24 @@ function getLandingAbleMeta(able) {
   return "";
 }
 
+// src/utils/get-validation-error.ts
+function getValidationError({ value, dataFormat }) {
+  const parsed = dataFormat.safeParse(value);
+  return parsed.error?.issues.map((issue) => issue.message) || null;
+}
+
 // src/utils/get-validation-errors.ts
 import z from "zod";
+function getValidationErrors(error) {
+  return z.flattenError(error).fieldErrors;
+}
 export {
   getLandingAbleLabel,
   getLandingAbleMeta,
   getLandingAbleThumbnail,
   getLandingAbleType,
+  getValidationError,
+  getValidationErrors,
   isAppImage,
   isCategory,
   isProduct,

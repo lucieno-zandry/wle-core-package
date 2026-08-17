@@ -34,6 +34,8 @@ __export(index_exports, {
   getLandingAbleMeta: () => getLandingAbleMeta,
   getLandingAbleThumbnail: () => getLandingAbleThumbnail,
   getLandingAbleType: () => getLandingAbleType,
+  getValidationError: () => getValidationError,
+  getValidationErrors: () => getValidationErrors,
   isAppImage: () => isAppImage,
   isCategory: () => isCategory,
   isProduct: () => isProduct,
@@ -99,14 +101,25 @@ function getLandingAbleMeta(able) {
   return "";
 }
 
+// src/utils/get-validation-error.ts
+function getValidationError({ value, dataFormat }) {
+  const parsed = dataFormat.safeParse(value);
+  return parsed.error?.issues.map((issue) => issue.message) || null;
+}
+
 // src/utils/get-validation-errors.ts
 var import_zod = __toESM(require("zod"));
+function getValidationErrors(error) {
+  return import_zod.default.flattenError(error).fieldErrors;
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   getLandingAbleLabel,
   getLandingAbleMeta,
   getLandingAbleThumbnail,
   getLandingAbleType,
+  getValidationError,
+  getValidationErrors,
   isAppImage,
   isCategory,
   isProduct,
