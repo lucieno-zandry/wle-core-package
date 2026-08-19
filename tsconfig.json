@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "jsx": "react-jsx", // Necessary for React hooks
+        "declaration": true, // Generates .d.ts files for your types
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "ignoreDeprecations": "6.0"
+    },
+    "include": [
+        "src"
+    ]
+}

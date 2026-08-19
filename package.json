@@ -1,0 +1,27 @@
+{
+  "name": "wle-core",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "The core package for wle",
+  "peerDependencies": {
+    "react": "^19.2.6"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.15",
+    "react": "^19.2.6",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "zod": "^4.4.3"
+  }
+}
