@@ -223,7 +223,7 @@ type Order = {
     shipping_method_id?: number;
     shipping_cost: number;
     shipping_method_snapshot?: ShippingMethodSnapshot;
-    status: "PENDING_PAYMENT" | "PAID" | "PROCESSING" | "COMPLETED" | "CANCELLED";
+    status: "PENDING_PAYMENT" | "PAID" | "PROCESSING" | "COMPLETED" | "CANCELLED" | "SHIPPED" | "DELIVERED";
     total_weight_kg?: number;
     address_snapshot: Address;
     coupon_snapshot?: Pick<Coupon, "id" | "code" | "type" | "discount" | "min_order_value">;
