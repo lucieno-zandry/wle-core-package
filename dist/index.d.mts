@@ -233,6 +233,7 @@ type Order = {
     user?: User;
     refund_requests?: RefundRequest[];
     coupon?: Coupon;
+    can?: Record<string, boolean>;
 };
 type Coupon = {
     id: number;
