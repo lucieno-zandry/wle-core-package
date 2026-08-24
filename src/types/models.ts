@@ -271,6 +271,7 @@ export type Order = {
     user?: User;
     refund_requests?: RefundRequest[];
     coupon?: Coupon;
+    can?: Record<string, boolean>;
 };
 
 export type Coupon = {
